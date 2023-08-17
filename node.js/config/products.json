@@ -1,0 +1,27 @@
+{
+    "products" : [
+        {
+            "id": 1,
+            "titulo":"HeadPhone MonsterBeats",
+            "descricao":"MonsterBeats White",
+            "img": "/node.js/public/images/product0.png",
+            "price": 199
+        },
+        {
+            "id": 2,
+            "titulo": "HeadPhone Sony",
+            "descricao": "Sony Black",
+            "img":"/node.js/public/images/product1.png",
+            "price": 199
+        },
+        {
+            "id": 3,
+            "titulo": "HeadPhone JBL",
+            "descricao": "JBL White",
+            "img":"/node.js/public/images/product2.png",
+            "price": 199
+        }
+
+    ]
+
+}

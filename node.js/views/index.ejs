@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+    <style>
+        *, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+        }
+        .header {
+            height: 200px;
+            background-color: #161366;
+        }
+        .flex {
+            display: flex;
+        }
+        .flex-center {
+            justify-content: center;
+            align-items: center;
+        }
+        .horizontal {
+            flex-direction: row;
+        }
+        .vertical {
+            flex-direction: column;
+        }
+        .flex-1 {
+            flex: 1;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .img-produto {
+            width: 80%;
+        }
+        .titulo{
+            color: #ffff;
+        }
+        .titulo-produto{
+            margin: 10px 0;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    
+    <div>
+        <header class="header flex flex-center">
+            <h1 class="titulo">E-Commerce PayPal</h1>
+        </header>
+
+        <hr /><br>
+        
+        <div class="flex horizontal">
+            <% for(var i=0; i<products.length; i++){ %>
+
+              <div class="flex-1 flex vertical">
+                <div>
+                    <img src="<%= products[i].img %>" class="img-produto" />
+                </div>
+
+                <br />
+
+
+                <h2 class="titulo-produto text-center"><%= products[i].titulo %></h2>
+                <p class="descricao-produto text-center"><%= products[i].descricao%> </p>
+                <br />
+                <h2 class="price-produto text-center">
+                    <span> Price $ </span>
+                    <%= products[i].price %> 
+                </h2>
+
+                <a href="#" class="flex flex-center"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick" />
+                    <input type="hidden" name="hosted_button_id" value="JYPTHEYTKZKHQ" />
+                    <input type="hidden" name="currency_code" value="USD" />
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+                  </form></a>
+        </div>  
+
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
